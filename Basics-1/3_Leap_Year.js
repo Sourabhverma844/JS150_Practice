@@ -17,12 +17,15 @@ let r1 = readline.createInterface({
 
 
 r1.question("Enter Your Year : ", function(input){
-    year = Number(input);
-    if((year%4 === 0) && (year%100 != 0) || (year%400 === 0)){
+    let year = Number(input);
+    if(isNaN(year)){
+        console.log("Please Give me a Valid Number");
+    }
+    else if((year%4 === 0) && (year%100 != 0) || (year%400 === 0)){
         console.log(`${year} is a leap year`);
     }
     else{
-        console.log("not a leap year");
+        console.log(`${year} is "Not" a leap year`);
     }
     r1.close();
 });

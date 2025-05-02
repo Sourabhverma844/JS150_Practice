@@ -8,25 +8,34 @@ Input: number = 153
 Output: Armstrong Number
 Explanation: 153 is an Armstrong number because 1^3 + 5^3 + 3^3 = 153.
 */
+const readline = require("readline");
 
-let readline = require("readline");
-let r1 = readline.createInterface({
-    input : process.stdin,
-    output : process.stdout
+const r1 = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
 });
 
-
-r1.question("Enter Your Number : ", function(input){
-    let sum = 0;
-    for(let i = 0; i < input.length; i++){
-        pow = input.length;
-        sum += input[i] ** pow;
-    }
-    if(Number(input) === sum){
-        console.log(`${input} is an armstrong number`);
-    }
-    else{
-        console.log(`${input} is not an armstrong number`);
-    }
+r1.question("Enter your number: ", function (input) {
+  const number = Number(input);
+  
+  if (isNaN(number)) {
+    console.log("Invalid input. Please enter a valid number.");
     r1.close();
+  }
+
+  const numStr = input;
+  const power = numStr.length;
+  let sum = 0;
+
+  for (let i = 0; i < power; i++) {
+    sum += Number(numStr[i]) ** power;
+  }
+
+  if (sum === number) {
+    console.log(`${number} is an Armstrong number.`);
+  } else {
+    console.log(`${number} is not an Armstrong number.`);
+  }
+
+  r1.close();
 });

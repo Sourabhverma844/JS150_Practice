@@ -10,22 +10,29 @@ Explanation: 7 has no divisors other than 1 and itself, so it is a prime number.
 */
 
 const readline = require("readline");
-const r1 = readline.createInterface({
+const rl = readline.createInterface({
     input : process.stdin,
     output : process.stdout
 });
-let isprime = true;
-r1.question("Enter Your Number : ", function(input){
-    number = Number(input);
-    for(let i = 2; i < number; i++){
-        if(number%i === 0){
-            console.log("not prime");
-            isprime = false;
-            break;
+
+rl.question("Enter Your Number : ", function(input){
+    let number = Number(input);
+
+    if(isNaN(number)){
+        console.log("Enter a Valid Number.")
+    }
+    else if(number <= 1){
+        console.log(`${number} is Not a Prime Number`);
+    }
+    else{
+        let isprime = true;
+        for(let i = 2; i <= Math.sqrt(number); i++){
+            if(number%i === 0){
+                isprime = false;
+                break;
+            }
         }
+        console.log(isprime ? `${number} is a prime number` : `${number} is not a prime number`);
     }
-    if(isprime){
-        console.log("prime");
-    }
-    r1.close();
+    rl.close();
 });

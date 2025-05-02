@@ -17,15 +17,14 @@ const rl = readline.createInterface({
 
 
 rl.question("Enter Your String or Number : ", function(input){
-    let str = "";
-    for(let i = input.length-1; i >= 0 ; i--){
-        str += input[i];
-    }
-    if(str === input){
+    const reverse = input.split("").reverse().join("");
+    console.log(input);
+    console.log(reverse);
+    if(input === reverse){
         console.log(`${input} is a palindrome`);
     }
     else{
-        console.log(`Not is a palindrome`);
+        console.log(`Not a palindrome`);
     }
     rl.close();
 });
