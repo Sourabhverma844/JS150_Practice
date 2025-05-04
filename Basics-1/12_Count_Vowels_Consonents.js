@@ -16,20 +16,20 @@ const rl = readline.createInterface({
 });
 
 rl.question("Enter Your Word : ", function(input){
-    let Vowels = 0;
-    let Consonants = 0;
-    for(let i=0; i < input.length; i++){
-            let char = input[i];
-            if(/[a-zA-Z]/.test(char)){
-                if("aeiouAEIOU".includes(char)){
-                    Vowels++;
+    let vowels = 0;
+    let consonants = 0;
+    let cleanedInput = input.toLocaleLowerCase();
+
+    for(let char of cleanedInput){
+            if(/[a-z]/.test(char)){
+                if("aeiou".includes(char)){
+                    vowels++;
                 }
                 else{
-                    Consonants++;
+                    consonants++;
                 }
             }
     }
-    console.log(Vowels);
-    console.log(Consonants);
+    console.log(`vowels : ${vowels} \n consonants : ${consonants}`);
     rl.close();
 });

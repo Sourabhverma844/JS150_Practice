@@ -20,6 +20,7 @@ rl.question("Enter a Number : ", function(input){
     if(isNaN(limit) || limit < 0){
         console.log("Please Enter a Valid Non-Negative Number.");
         rl.close();
+        return;
     }
     let result = [];
     let a = 0, b = 1;

@@ -15,11 +15,20 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-rl.question("Enter Your Numbers : ", function(input){
-    array = input.split("").map(Number);
-    console.log(array);
+rl.question("Enter Your Numbers Seprated By comma: ", function(input){
+    let array = input.split(",").map(val => Number(val.trim()));
+
     for(let i = 0; i < array.length; i++){
-        array[i]
+        if(isNaN(array[i])){
+            console.log("Please Enter Integers Only.");
+            rl.close();
+            return;
+        }
     }
+
+    let Largest = Math.max(...array);
+    let Smallest = Math.min(...array);
+
+    console.log(`Largest : ${Largest} \nSmallest : ${Smallest} `);
     rl.close();
 });

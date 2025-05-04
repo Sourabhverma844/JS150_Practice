@@ -14,11 +14,16 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 rl.question("Enter The Number : ", function(input){
-    number = Number(input);
-    let sum = 1;
-    for (let i=1; i<=number;i++){
-        sum = sum*i;
+    let number = Number(input);
+    if(isNaN(number) || number < 0 || !Number.isInteger(number)){
+        console.log("Please enter a valid non-negative integer.");
+        rl.close();
+        return;
     }
-    console.log(sum);
+    let Factorial = 1;
+    for (let i=1; i<=number;i++){
+        Factorial = Factorial*i;
+    }
+    console.log(Factorial);
     rl.close();
 });

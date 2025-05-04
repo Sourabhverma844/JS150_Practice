@@ -18,6 +18,8 @@ rl.question("Enter Your Number : ", function(num){
     let number = Number(num);
     if(isNaN(number)){
         console.log("Please Enter a Valid Number.");
+        rl.close();
+        return;
     }
     if(number%2 == 0){
         console.log("Even");

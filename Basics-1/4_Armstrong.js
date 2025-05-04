@@ -21,6 +21,7 @@ r1.question("Enter your number: ", function (input) {
   if (isNaN(number)) {
     console.log("Invalid input. Please enter a valid number.");
     r1.close();
+    return;
   }
 
   const numStr = input;

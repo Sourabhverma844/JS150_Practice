@@ -20,6 +20,8 @@ r1.question("Enter Your Year : ", function(input){
     let year = Number(input);
     if(isNaN(year)){
         console.log("Please Give me a Valid Number");
+        r1.close();
+        return;
     }
     else if((year%4 === 0) && (year%100 != 0) || (year%400 === 0)){
         console.log(`${year} is a leap year`);

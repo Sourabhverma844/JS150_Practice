@@ -19,7 +19,9 @@ rl.question("Enter Your Number : ", function(input){
     let number = Number(input);
 
     if(isNaN(number)){
-        console.log("Enter a Valid Number.")
+        console.log("Enter a Valid Number.");
+        rl.close();
+        return;
     }
     else if(number <= 1){
         console.log(`${number} is Not a Prime Number`);

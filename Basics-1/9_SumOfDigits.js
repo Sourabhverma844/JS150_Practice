@@ -14,12 +14,17 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
-rl.question("Enter The Number : ", function(input){
-    const numbers = input.split("").map(Number);
+
+rl.question("Enter a non-negative integer : ", function(input){
+    if (!/^\d+$/.test(input)){
+        console.log("Plese Enter a Valid Non-Negative Integer.")
+        rl.close();
+        return;
+    }    
     let sum = 0;
-    for(let i = 0;i<numbers.length;i++){
-        sum += numbers[i];
+    for(let char of input){
+        sum += Number(char);
     }
-    console.log(sum);
+    console.log("Sum of digits:", sum);
     rl.close();
 });
