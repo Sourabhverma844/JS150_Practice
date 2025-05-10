@@ -16,6 +16,7 @@ const rl = readline.createInterface({
 
 rl.question("Enter The Number : ", function(input){
     number = Number(input);
+    
     let fact = 1;
     let sum = 0;
     for(let i = 1; i <= input; i++){

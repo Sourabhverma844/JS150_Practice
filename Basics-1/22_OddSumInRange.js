@@ -19,6 +19,18 @@ rl.question("Enter The First Value : ", function(a){
     let First = Number(a);
     rl.question("Enter The Last Value : ", function(b){
         let Last = Number(b);
+
+        if(isNaN(First) || isNaN(Last)){
+            console.log("Please Enter Valid Integer Value");
+            rl.close();
+            return;
+        }
+        if(First > Last){
+            console.log("Please provide a range where the first value is less than or equal to the last value.");
+            rl.close();
+            return;
+        }
+
         let sum = 0;
         for(let i = First; i <= Last; i++){
             if(i%2 !==0){

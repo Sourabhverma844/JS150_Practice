@@ -14,11 +14,19 @@ const rl = readline.createInterface({
     input : process.stdin,
     output : process.stdout
 });
+
 console.log("Enter the first and last numbers of the range, and we will calculate the sum of all even numbers within that range, including both endpoints.")
 rl.question("Enter The First Value : ", function(a){
-    let First = Number(a);
+    const First = Number(a);
     rl.question("Enter The Last Value : ", function(b){
-        let Last = Number(b);
+        const Last = Number(b);
+
+        if(isNaN(First) || isNaN(Last)){
+            console.log("Enter Valid Integer Value.")
+            rl.close();
+            return;
+        }
+        
         let sum = 0;
         for(let i = First; i <= Last; i++){
             if(i%2===0){

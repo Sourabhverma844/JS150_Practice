@@ -16,7 +16,12 @@ const rl = readline.createInterface({
 });
 
 rl.question("Enter The Number You Want To Check, Is a Perfect Number Or Not: ", function(input){
-    number = Number(input);
+    const number = Number(input);
+    if(isNaN (number)){
+        console.log("Please Enter Valid Integer Number");
+        rl.close();
+        return;
+    }
     let sum = 0;
     for(let i = 1; i < number; i++){
         if(number%i === 0){

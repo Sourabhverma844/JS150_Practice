@@ -14,16 +14,26 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
+
 rl.question("Enter The Number : ", function(input){
-    n = input.length;
-    let sum = 0;
-    for(let i = 0; i < input.length; i++){
-        sum = sum + input[i]**n;
+    let number = Number(input);
+    if(isNaN(number) || number < 0 || !Number.isInteger(number)){
+        console.log("Please Enter Valid +ve Integer.");
+        rl.close();
+        return;
     }
-    if(Number(input) === sum){
-        console.log(`${input} is Narcissistic Number`);
+    let digits = number.toString();
+    let power = digits.length;
+    let sum = 0;
+    for(let num of digits){
+        sum += Number(num)**power;
+    }
+    
+    if(number === sum){
+        console.log(`${number} is Narcissistic Number`);
     }
     else{
-        console.log(`${input} is "Not" Narcissistic Number`);
+        console.log(`${number} is "Not" Narcissistic Number`);
     }
+    rl.close();
 });

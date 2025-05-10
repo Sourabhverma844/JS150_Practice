@@ -18,22 +18,26 @@ rl.question("Enter The \"Initial Value\" Of Range Under Which You Want Prime Num
     let Initial = Number(input1);
     rl.question("Enter The \"Last Value\" Of Range Under Which You Want Prime Number : ", function(input2){
         let Last = Number(input2);
-        AllNumbers = [];
-        for(let i = Initial; i = Last; i++){
-            AllNumbers.push(i);
+        let AllPrime = [];
+
+        if(isNaN(Initial) || isNaN(Last)){
+            console.log("Please Enater Valid Integer Value.");
+            rl.close();
+            return;
         }
-        for(let i = 0; i < AllNumbers.length; i++){
-            let isprime = true;
-            for(let j = 2; j < AllNumbers[i]; j++){
-                if(AllNumbers[i]%j === 0){
-                    isprime = false;
-                    break;
+        for(let i = Initial; i <= Last; i++){
+            if(i < 2) continue;
+            let isPrime = true;
+            for(let j = 2; j < i; j++){
+                if(i%j == 0){
+                    isPrime = false;
                 }
             }
-            if(isprime){
-                console.log(AllNumbers[i]);
+            if(isPrime){
+                AllPrime.push(i);
             }
         }
+        console.log(AllPrime);
         rl.close();
     });
 });

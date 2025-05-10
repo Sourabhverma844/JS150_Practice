@@ -9,17 +9,13 @@ Output: 15
 Explanation: The sum of the elements in the array is 15.
 */
 const readline = require("readline");
-const r1 = readline.createInterface({
+const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-r1.question("Enter The Numbers Seprated by comma(,): ", function(input){
-    arr = input.split(",").map(Number);
-    let sum = 0;
-    for(let i = 0; i < arr.length; i++){
-        sum += arr[i];
-    }
-    console.log(sum);
-    r1.close();
+rl.question("Enter The Numbers Seprated By Comma(,) : ", (input) => {
+    const sum = input.split(',').map(val => Number(val.trim())).reduce((acc,curr) => acc+curr,0);
+    console.log(`The Sum of Values is : ${sum}`);
+    rl.close();
 });

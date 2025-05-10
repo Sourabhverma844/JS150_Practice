@@ -15,19 +15,25 @@ Output:
 Explanation: The multiplication table for 4 up to 5 is generated.
 */
 const readline = require("readline");
+
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
 rl.question("Enter The Number : ", function(input){
-    number = Number(input);
+    let number = Number(input);
+
+    if(isNaN(number)){
+        console.log("Please Enter Valid Integar values.");
+        rl.close();
+        return;
+    }
     for(let i = 1; i <= 10; i++){
         console.log(`${number} * ${i} =`,number*i);
     }
+    rl.close();
 });
-
-
 
 
 
