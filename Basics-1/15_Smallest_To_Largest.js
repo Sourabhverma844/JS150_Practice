@@ -13,7 +13,7 @@ const readline = require("readline");
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
-});
+}); 
 
 rl.question("Enter the numbers separated by commas: ", function(input) {
     let array = input.split(",").map(val => Number(val.trim()));

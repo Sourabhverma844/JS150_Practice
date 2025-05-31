@@ -7,7 +7,7 @@ Example:
 Input: number = 12345
 Output: 5
 Explanation: The number 12345 has 5 digits.
-*/
+*/ 
 const readline = require("readline");
 const rl = readline.createInterface({
     input: process.stdin,

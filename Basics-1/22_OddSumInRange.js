@@ -7,7 +7,7 @@ Example:
 Input: range = [1, 10]
 Output: 25
 Explanation: The sum of odd numbers between 1 and 10 is 1 + 3 + 5 + 7 + 9 = 25.
-*/
+*/ 
 
 const readline = require("readline");
 const rl = readline.createInterface({

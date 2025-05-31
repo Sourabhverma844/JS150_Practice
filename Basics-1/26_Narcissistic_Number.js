@@ -24,7 +24,7 @@ rl.question("Enter The Number : ", function(input){
     }
     let digits = number.toString();
     let power = digits.length;
-    let sum = 0;
+    let sum = 0; 
     for(let num of digits){
         sum += Number(num)**power;
     }

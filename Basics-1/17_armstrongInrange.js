@@ -7,7 +7,7 @@ Example:
 Input: range = [1, 500]
 Output: [1, 153, 370, 371, 407]
 Explanation: Armstrong numbers between 1 and 500 are 1, 153, 370, 371, and 407.
-*/
+*/ 
 const readline = require("readline");
 const rl = readline.createInterface({
     input : process.stdin,

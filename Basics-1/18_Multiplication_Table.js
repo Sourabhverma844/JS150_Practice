@@ -13,7 +13,7 @@ Output:
 4 x 4 = 16  
 4 x 5 = 20  
 Explanation: The multiplication table for 4 up to 5 is generated.
-*/
+*/ 
 const readline = require("readline");
 
 const rl = readline.createInterface({

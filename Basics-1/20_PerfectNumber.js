@@ -7,8 +7,7 @@ Example:
 Input: number = 28
 Output: Perfect Number
 Explanation: 28 is a perfect number because its divisors (1, 2, 4, 7, 14) sum up to 28.
-*/
-
+*/  
 const readline = require("readline");
 const rl = readline.createInterface({
     input: process.stdin,

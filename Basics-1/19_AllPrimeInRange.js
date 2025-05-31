@@ -7,7 +7,7 @@ Example:
 Input: range = [10, 30]
 Output: [11, 13, 17, 19, 23, 29]
 Explanation: Prime numbers between 10 and 30 are 11, 13, 17, 19, 23, and 29.
-*/
+*/ 
 const readline = require("readline");
 const rl = readline.createInterface({
     input: process.stdin,
