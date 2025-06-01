@@ -5,27 +5,21 @@ Example:
 Input: number = 4
 Output: Even
 Explanation: Since 4 is divisible by 2, it is an even number.
-*/
+*/ 
 
 const readline = require("readline");
-
 const rl = readline.createInterface({
     input : process.stdin,
     output : process.stdout
 });
 
-rl.question("Enter Your Number : ", function(num){
-    let number = Number(num);
-    if(isNaN(number)){
-        console.log("Please Enter a Valid Number.");
-        rl.close();
-        return;
-    }
-    if(number%2 == 0){
-        console.log("Even");
+rl.question("Enter number : ",function(input){
+    let value = Number(input);
+    if(value%2==0){
+        console.log("No is even");
     }
     else{
-        console.log("Odd");
+        console.log("no is odd");
     }
-    r1.close();
-} );
+    rl.close();
+});
